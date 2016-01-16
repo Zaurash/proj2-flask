@@ -39,9 +39,29 @@ def process(raw):
             if entry:
                 cooked.append(entry)
                 entry = { }
+            if content.strip(" ") == "1":
+                entry['week'] = content + " 1/4/16"
+            elif content.strip(" ") == "2":
+                entry['week'] = content + " 1/11/16"
+            elif content.strip(" ") == "3":
+                entry['week'] = content + " 1/18/16"
+            elif content.strip(" ") == "4":
+                entry['week'] = content + " 1/25/16"
+            elif content.strip(" ") == "5":
+                entry['week'] = content + " 2/1/16"
+            elif content.strip(" ") == "6":
+                entry['week'] = content + " 2/8/16"
+            elif content.strip(" ") == "7":
+                entry['week'] = content + " 2/15/16"
+            elif content.strip(" ") == "8":
+                entry['week'] = content + " 2/22/16"
+            elif content.strip(" ") == "9":
+                entry['week'] = content + " 2/29/16"
+            elif content.strip(" ") == "10":
+                entry['week'] = content + " 3/7/16"
+                
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = content
 
         elif field == 'topic' or field == 'project':
             entry[field] = content
